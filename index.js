@@ -17,5 +17,5 @@ app.use(router);
 
 app.listen(PORT, () => {
   mongoose.connect(process.env.MONGO_ATLAS_URL);
-  console.log(`🚀 http://localhost:${PORT}`);
+  console.log(`🚀 https://memory-back.herokuapp.com/:${PORT}`);
 });
