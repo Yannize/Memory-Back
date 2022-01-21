@@ -16,21 +16,28 @@ const mainController = {
       res.status(200).json(scores);
     } catch (error) {
       console.trace(error);
+      res.status(400).json({ getScore: 'une erreur est survenue' });
     }
   },
 
   addNewScore: async (req, res) => {
+    let { pseudo, time } = req.body;
+
+    if (+time < 6) {
+      pseudo += ' (Soupçons de tricherie !)';
+    }
+
     let score = new Score({
-      pseudo: req.body.pseudo,
-      time: req.body.time,
+      pseudo,
+      time,
     });
 
     try {
       score = await score.save();
+      res.status(200).json({ save: 'ok' });
     } catch (error) {
-      res.status(400).send('404');
+      res.status(400).json({ save: 'une erreur est survenue' });
     }
-    res.redirect('/');
   },
 };
 
