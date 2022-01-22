@@ -1,3 +1,4 @@
+// import des dépendances
 require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
@@ -9,7 +10,12 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// middleware
+app.use(
+  cors({
+    origin: 'https://yannize.github.io/Memory-Front/',
+  })
+);
 
 app.use(express.static('public'));
 
