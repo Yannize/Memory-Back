@@ -11,6 +11,9 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
+// connection à la bdd mongo atlas
+mongoose.connect(process.env.MONGO_ATLAS_URL);
+
 // cors middleware pour n'authoriser que les requêtes qui viennent du site en origin
 app.use(
   cors({
@@ -24,9 +27,7 @@ app.use(bodyParser.none());
 // middleware du router
 app.use(router);
 
-// lancement du serveur
+// Lance le serveur sur le port spécifié
 app.listen(PORT, () => {
-  // connection à la bdd mongo atlas quand le serveur est lancé
-  mongoose.connect(process.env.MONGO_ATLAS_URL);
   console.log(`🚀 https://memory-back.herokuapp.com/:${PORT}`);
 });
