@@ -23,7 +23,7 @@ const mainController = {
   addNewScore: async (req, res) => {
     let { pseudo, time } = req.body;
 
-    if (+time < 6) {
+    if (+time <= 6) {
       pseudo += ' (Soupçons de tricherie !)';
     }
 
