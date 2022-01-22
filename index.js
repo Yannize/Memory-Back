@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 // middleware
 app.use(
   cors({
-    origin: 'https://yannize.github.io/Memory-Front/',
+    origin: 'https://yannize.github.io',
   })
 );
 
