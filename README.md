@@ -1,7 +1,5 @@
 # Memory
 
----
-
 Après avoir cloné le repo :
 
 + créer une bdd sur [MongoDB Atlas](https://nodeca.github.io/pica/demo/), puis entrer la string de connection dans un fichier .env en suivant le .env.example
