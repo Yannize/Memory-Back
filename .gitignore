@@ -1,2 +1,4 @@
+# liste de fichier ou dossier ignorer par Git
+
 node_modules/
 .env
